@@ -30,14 +30,14 @@ const Profile = () => {
       className="relative overflow-hidden min-h-screen bg-cover bg-center"
       style={{ backgroundImage: `url(${backgroundImg})` }}
     >
-      {/* Card Content */}
+      
       <div
         className="max-w-lg mx-auto mt-10 p-6 rounded-lg shadow-lg
                    border border-[#d4af7f] bg-blue/50 backdrop-blur-md
                    transition duration-500 ease-in-out hover:shadow-xl
                    flex flex-col items-center text-center"
       >
-        {/* Text Section */}
+     
         <div className="relative group p-6 mb-6 rounded-xl overflow-hidden transition duration-700 ease-in-out transform hover:scale-105">
           <div className="absolute inset-0 bg-gradient-to-r from-[#ffe5b4] to-[#c7c5f5] rounded-xl opacity-60 group-hover:from-[#dc8412] group-hover:to-[#6674cd] transition-all duration-700 blur-sm rotate-2 scale-110 z-0"></div>
 
@@ -53,7 +53,7 @@ const Profile = () => {
           </div>
         </div>
 
-        {/* Image with Rotating Border */}
+        
        {card.image && (
   <div
     className="relative inline-block mb-4 p-[10px]"
@@ -85,7 +85,7 @@ const Profile = () => {
 )}
        
         <div className="relative inline-block p-[2px] rounded-lg mb-4 group">
-  {/* Gradient Border Background */}
+ 
   <div
     className="absolute inset-0 rounded-lg 
                bg-gradient-to-r from-[#cc753f] to-[#002147] 
@@ -94,7 +94,6 @@ const Profile = () => {
     style={{ borderRadius: '0.5rem' }}
   ></div>
 
-  {/* Actual Button */}
   <button
     onClick={handleLogout}
     className="relative z-10 px-4 py-2 bg-[#191889] text-white font-semibold 

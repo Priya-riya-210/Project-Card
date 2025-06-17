@@ -73,119 +73,126 @@ const handleSubmit = async (e) => {
 
   return (
     
-<div  className="relative overflow-hidden min-h-screen bg-cover bg-center"
-      style={{ backgroundImage: `url(${backgroundImg})` }}> 
-
-<div className="max-w-md mx-auto mt-10 p-6  rounded-lg 
-                transition duration-500 ease-in-out
-                hover:shadow-2xl
-                hover:bg-[#2CCEE3]
-                border border-primary 
-                ml-230  "  >
-
-  <h2 className="text-3xl font-semibold text-primary-dark mb-6 text-center">
-    {isLogin ? "Login" : "Register"}
-  </h2>
-
-  <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-
-    <input
-      type="text"
-      name="username"
-      value={form.username}
-      placeholder="Username"
-      required
-      onChange={handleChange}
-      className="input input-bordered input-primary w-full transition hover:border-primary-dark focus:outline-none focus:ring-2 focus:ring-primary-dark"
-    />
-
-    <input
-      type="password"
-      name="password"
-      value={form.password}
-      placeholder="Password"
-      required
-      onChange={handleChange}
-      className="input input-bordered input-primary w-full transition hover:border-primary-dark focus:outline-none focus:ring-2 focus:ring-primary-dark"
-    />
-
-    {!isLogin && (
-      <>
-        <input
-          type="email"
-          name="email"
-          value={form.email}
-          placeholder="Email"
-          required
-          onChange={handleChange}
-          className="input input-bordered input-primary w-full transition hover:border-primary-dark focus:outline-none focus:ring-2 focus:ring-primary-dark"
+ <div className="relative min-h-screen flex items-center justify-center ">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+      >
+        <source
+          src="https://res.cloudinary.com/dspucsmpo/video/upload/v1750171589/Background_video_euhhlu.mp4"
+          type="video/mp4"
         />
+        Your browser does not support the video tag.
+      </video>
 
-        <input
-          type="number"
-          name="age"
-          value={form.age}
-          placeholder="Age"
-          required
-          onChange={handleChange}
-          className="input input-bordered input-primary w-full transition hover:border-primary-dark focus:outline-none focus:ring-2 focus:ring-primary-dark"
-        />
+<div className="relative z-10  bg-white-10/10 border border-blue-300 p-8 rounded-xl shadow-xl max-w-md w-full text-white">
+        <h2 className="text-2xl font-bold mb-6 text-center text-white">
+          {isLogin ? "Login" : "Register"}
+        </h2>
 
-        <input
-          type="text"
-          name="gender"
-          value={form.gender}
-          placeholder="Gender"
-          required
-          onChange={handleChange}
-          className="input input-bordered input-primary w-full transition hover:border-primary-dark focus:outline-none focus:ring-2 focus:ring-primary-dark"
-        />
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <input
+            type="text"
+            name="username"
+            value={form.username}
+            onChange={handleChange}
+            placeholder="Username"
+            required
+            className="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 backdrop-blur-md"
+          />
 
-        <input
-          type="number"
-          name="contact"
-          value={form.contact}
-          placeholder="Contact"
-          required
-          onChange={handleChange}
-          className="input input-bordered input-primary w-full transition hover:border-primary-dark focus:outline-none focus:ring-2 focus:ring-primary-dark"
-        />
+          <input
+            type="password"
+            name="password"
+            value={form.password}
+            onChange={handleChange}
+            placeholder="Password"
+            required
+            className="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 backdrop-blur-md"
+          />
 
-        <input
-          type="file"
-          name="image"
-          accept="image/*"
-          onChange={(e) => setForm({ ...form, image: e.target.files[0] })}
-          className="file-input file-input-primary w-full transition hover:file:bg-primary-dark hover:file:text-white"
-        />
-      </>
-    )}
+          {!isLogin && (
+            <>
+              <input
+                type="email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+                placeholder="Email"
+                required
+                className="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 backdrop-blur-md"
+              />
 
-    <button
-      type="submit"
-      className="btn btn-primary mt-4 transition hover:bg-primary-dark focus:outline-none focus:ring-4 focus:ring-primary-light"
-    >
-      {isLogin ? "Login" : "Register"}
-    </button>
-  </form>
+              <input
+                type="number"
+                name="age"
+                value={form.age}
+                onChange={handleChange}
+                placeholder="Age"
+                required
+                className="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 backdrop-blur-md"
+              />
 
-  <p
-    onClick={() => setIsLogin(!isLogin)}
-    className="mt-4 text-center text-secondary cursor-pointer hover:text-primary-dark transition"
-  >
-    {isLogin ? "Don't have an account? Register" : "Already have an account? Login"}
-  </p>
+              <input
+                type="text"
+                name="gender"
+                value={form.gender}
+                onChange={handleChange}
+                placeholder="Gender"
+                required
+                className="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 backdrop-blur-md"
+              />
 
-  <Link
-    to="/contact"
-    className="block mt-2 text-center text-primary hover:text-primary-dark transition"
-  >
-    Contact us
-  </Link>
-</div>
+              <input
+                type="number"
+                name="contact"
+                value={form.contact}
+                onChange={handleChange}
+                placeholder="Contact"
+                required
+                className="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 backdrop-blur-md"
+              />
 
-</div>
+              <input
+                type="file"
+                name="image"
+                accept="image/*"
+                onChange={(e) => setForm({ ...form, image: e.target.files[0] })}
+                className="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 backdrop-blur-md "
+              />
+            </>
+          )}
+
+          <button
+            type="submit"
+            className="bg-white-600 text-white py-2 rounded hover:bg-blue-700 transition border-2"
+          >
+            {isLogin ? "Login" : "Register"}
+          </button>
+        </form>
+
+        <p
+          onClick={() => setIsLogin(!isLogin)}
+          className="mt-4 text-center text-blue-600 cursor-pointer hover:underline"
+        >
+          {isLogin
+            ? "Don't have an account? Register"
+            : "Already have an account? Login"}
+        </p>
+
+        <Link
+          to="/contact"
+          className="block mt-2 text-center hover:underline text-blue-600"
+        >
+          Contact us
+        </Link>
+      </div>
+    </div>
   )
 }
 
-export default CardForm
+export default CardForm;
+
